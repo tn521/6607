@@ -60,20 +60,35 @@ ss = ss.dropna() #sanity check
 lr = LogisticRegression(class_weight="balanced")
 lr.fit(X_train, y_train)
 
-pd.DataFrame(confusion_matrix(y_test, y_pred),
-             columns=["Predicted Negative","Predicted Positive"],
-             index=["Actual Negative","Actual Positive"]).style.background_gradient(cmap="PiYG")
+age = st.slider("Age", 1, 99)
 
-             pers_42 = [8,7,2,1,2,42]
-predicted_class = lr.predict([pers_42])
-predicted_class[0]
+educ2 = st.selectbox("Education", 1, 8)
 
-probs_42 = lr.predict_proba([pers_42])
-print(round(probs_fck[0][1],4))
+income = st.selectbox("Income", 1, 9)
 
-pers_82 = [8,7,2,1,2,82]
-predicted_class_82 = lr.predict([pers_82])
-predicted_class_82[0]
+par = st.selectbox("Parent", 1, 6)
 
-probs_82 = lr.predict_proba([pers_82])
-print(round(probs_82[0][1],4))
+marital = st.selectbox("Marriage Status", 1, 6)
+
+gender = st.selectbox("Gender", 1, 2)
+
+predictors = np.array([[age, educ2, income, par, marital, gender]])
+
+prediction = lr.predict_proba(predictors[:,1])
+# pd.DataFrame(confusion_matrix(y_test, y_pred),
+#              columns=["Predicted Negative","Predicted Positive"],
+#              index=["Actual Negative","Actual Positive"]).style.background_gradient(cmap="PiYG")
+
+# pers_42 = [8,7,2,1,2,42]
+# predicted_class = lr.predict([pers_42])
+# predicted_class[0]
+
+# probs_42 = lr.predict_proba([pers_42])
+# print(round(probs_fck[0][1],4))
+
+# pers_82 = [8,7,2,1,2,82]
+# predicted_class_82 = lr.predict([pers_82])
+# predicted_class_82[0]
+
+# probs_82 = lr.predict_proba([pers_82])
+# print(round(probs_82[0][1],4))
