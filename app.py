@@ -65,13 +65,13 @@ age = st.slider("Age", 1, 99)
 
 educ2 = st.selectbox("Education", options=list(range(1, 8)))
 
-income = st.selectbox("Income", 1, 9)
+income = st.selectbox("Income", options=list(range(1, 9)))
 
-par = st.selectbox("Parent", 1, 6)
+par = st.selectbox("Parent", options=list(range(1, 6)))
 
-marital = st.selectbox("Marriage Status", 1, 6)
+marital = st.selectbox("Marriage Status", options=list(range(1, 6)))
 
-gender = st.selectbox("Gender", 1, 2)
+gender = st.selectbox("Gender", options=list(range(1, 2)))
 
 predictors = np.array([[age, educ2, income, par, marital, gender]])
 
