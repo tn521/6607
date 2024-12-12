@@ -61,6 +61,7 @@ ss = ss.dropna() #sanity check
 lr = LogisticRegression(class_weight="balanced")
 lr.fit(X_train, y_train)
 
+st.write("A high income (e.g. income=8), with a high level of education (e.g. 7), \nnon-parent who is married female and 42 years old should = 0.74")
 age = st.slider("Age", 1, 99)
 
 educ2 = st.selectbox("Education", options=list(range(1, 9)))
@@ -73,8 +74,7 @@ marital = st.selectbox("Marriage Status", options=list(range(1, 7)))
 
 gender = st.selectbox("Gender", options=list(range(1, 3)))
 
-predictors = [age, educ2, income, par, marital, gender]
-
+predictors = [income, educ2, par, marital, gender, age]
 prediction = lr.predict_proba([predictors])[:, 1]
 st.write(round(prediction[0],4))
 # pd.DataFrame(confusion_matrix(y_test, y_pred),
