@@ -73,7 +73,7 @@ marital = st.selectbox("Marriage Status", options=list(range(1, 7)))
 
 gender = st.selectbox("Gender", options=list(range(1, 3)))
 
-predictors = np.array([[age, educ2, income, par, marital, gender]])
+predictors = [age, educ2, income, par, marital, gender]
 
 prediction = lr.predict_proba[(predictors)]
 prediction
