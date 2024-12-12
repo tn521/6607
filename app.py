@@ -76,7 +76,7 @@ gender = st.selectbox("Gender", options=list(range(1, 3)))
 predictors = [age, educ2, income, par, marital, gender]
 
 prediction = lr.predict_proba([predictors])[:, 1]
-print(round(prediction[0],4))
+st.write(round(prediction[0],4))
 # pd.DataFrame(confusion_matrix(y_test, y_pred),
 #              columns=["Predicted Negative","Predicted Positive"],
 #              index=["Actual Negative","Actual Positive"]).style.background_gradient(cmap="PiYG")
