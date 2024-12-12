@@ -8,7 +8,8 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score, f1_score
 
-s = pd.read_csv(r'C:\Users\travi\OneDrive\Documents\6607\social_media_usage.csv') #load in dataset
+s = pd.read_csv('social_media_usage.csv')
+#s = pd.read_csv(r'C:\Users\travi\OneDrive\Documents\6607\social_media_usage.csv') #load in dataset
 s = s.dropna() #begin cleaning
 
 def clean_sm(x): #clean columns in dataset. 
