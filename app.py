@@ -63,7 +63,7 @@ lr.fit(X_train, y_train)
 
 age = st.slider("Age", 1, 99)
 
-educ2 = st.selectbox("Education", 1, 8)
+educ2 = st.selectbox("Education", options=list(range(1, 8)))
 
 income = st.selectbox("Income", 1, 9)
 
