@@ -67,7 +67,7 @@ educ2 = st.selectbox("Education", options=list(range(1, 9)))
 
 income = st.selectbox("Income", options=list(range(1, 10)))
 
-par = st.selectbox("Parent", options=list(range(1, 7)))
+par = st.selectbox("Parent", options=list(range(1, 3)))
 
 marital = st.selectbox("Marriage Status", options=list(range(1, 7)))
 
