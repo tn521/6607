@@ -63,19 +63,20 @@ lr.fit(X_train, y_train)
 
 age = st.slider("Age", 1, 99)
 
-educ2 = st.selectbox("Education", options=list(range(1, 8)))
+educ2 = st.selectbox("Education", options=list(range(1, 9)))
 
-income = st.selectbox("Income", options=list(range(1, 9)))
+income = st.selectbox("Income", options=list(range(1, 10)))
 
-par = st.selectbox("Parent", options=list(range(1, 6)))
+par = st.selectbox("Parent", options=list(range(1, 7)))
 
-marital = st.selectbox("Marriage Status", options=list(range(1, 6)))
+marital = st.selectbox("Marriage Status", options=list(range(1, 7)))
 
-gender = st.selectbox("Gender", options=list(range(1, 2)))
+gender = st.selectbox("Gender", options=list(range(1, 3)))
 
 predictors = np.array([[age, educ2, income, par, marital, gender]])
 
 prediction = lr.predict_proba(predictors)[:,1]
+prediction
 # pd.DataFrame(confusion_matrix(y_test, y_pred),
 #              columns=["Predicted Negative","Predicted Positive"],
 #              index=["Actual Negative","Actual Positive"]).style.background_gradient(cmap="PiYG")
